@@ -56,7 +56,6 @@ export default {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': this.get_auth_header()
               },
             })
             .then(res => res.json()) 
