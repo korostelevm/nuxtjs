@@ -52,7 +52,7 @@ export default {
       get_req:function(r){
         return new Promise((resolve,reject)=>{
           this.loading = true
-          fetch('/api?name=example', {
+          fetch('/api/stuff/bob', {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
