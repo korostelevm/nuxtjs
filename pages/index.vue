@@ -34,7 +34,41 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
-  }
+  },
+  name: 'microfrontend',
+    data() {
+      return {
+        error: false,
+        loading: false,
+      }
+    },
+    mounted: function() {
+      // c.run()
+      this.get_req({})
+    },
+    created: function() {
+    },
+    methods: {
+      get_req:function(r){
+        return new Promise((resolve,reject)=>{
+          this.loading = true
+          fetch('/stuff', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': this.get_auth_header()
+              },
+            })
+            .then(res => res.json()) 
+            .then(data => {
+              this.loading = false;
+              console.log(data)
+              resolve(data)
+            })
+          })
+      },
+    },
+
 }
 </script>
 
