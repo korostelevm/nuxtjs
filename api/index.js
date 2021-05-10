@@ -1,6 +1,7 @@
 module.exports = (req, res) => {
+    console.log('asdf')
     res.json({
-      body: 'root path',
+      body: 'asdddddfsdf path',
       query: req.query,
       cookies: req.cookies,
     })
