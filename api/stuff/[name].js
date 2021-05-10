@@ -1,13 +1,11 @@
-var a = null
+var a = {}
 
 module.exports = (req, res) => {
-  console.log(req)
-  if(!a){
-    a = {
-      state: req.query,
-      ts: new Date()
-    }
+  console.log(req.query)
+  if(!a[req.query.name]){
+    a[req.query.name]= new Date()
   }
+
   console.log('sadf')
     res.json({
       body: a,
