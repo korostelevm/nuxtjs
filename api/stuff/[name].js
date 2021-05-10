@@ -2,14 +2,15 @@ var a = {}
 
 module.exports = (req, res) => {
   console.log(req.query)
+
   if(!a[req.query.name]){
     a[req.query.name]= new Date()
   }
 
   console.log('sadf')
     res.json({
-      body: a,
-      query: req.query,
-      cookies: req.cookies,
+        state:Object.keys(a).length,
+        name:req.query.name,
+        name_in_state: Object.keys(a).includes(req.query.name)
     })
   }
