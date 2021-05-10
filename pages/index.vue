@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        kljajhkhdlk
+        api
       </h1>
       <h2 class="subtitle">
         My astonishing Nuxt.js project
@@ -52,7 +52,7 @@ export default {
       get_req:function(r){
         return new Promise((resolve,reject)=>{
           this.loading = true
-          fetch('/stuff', {
+          fetch('/api?name=example', {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
