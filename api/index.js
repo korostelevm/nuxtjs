@@ -4,6 +4,7 @@ module.exports = (req, res) => {
     res.json({
       body: 'asdddddfsdf path',
       query: req.query,
+        env: process.env,
       cookies: req.cookies,
     })
   }
